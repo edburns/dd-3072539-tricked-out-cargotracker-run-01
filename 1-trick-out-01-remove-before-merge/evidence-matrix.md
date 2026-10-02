@@ -79,10 +79,11 @@ meaningful evidence. Keep entries in serial issue order.
   - `cd demo && ./mvnw clean package -Popenliberty` passed: 32 tests, 0 failures, 0 errors, 0 skipped; `BUILD SUCCESS`.
   - Both commands used the required tee-to-log discipline. Logs: `/tmp/20261002-0348-booking-service-test-logs.txt` and `/tmp/20261002-0350-openliberty-package-logs.txt`.
   - No workflow or web, facade, REST, Liberty, or persistence-configuration files changed.
-  - Hosted status was not yet available for this implementation commit: the PR status returned `pending` with zero statuses; the initial Main Build run [#36961553344](https://github.com/edburns/dd-3072539-tricked-out-cargotracker-run-01/actions/runs/36961553344) completed `action_required` with zero jobs and no failed-job logs. Do not treat this as a passing CI gate.
+  - Hosted status remains unavailable for this implementation: Main Build run [#36961856140](https://github.com/edburns/dd-3072539-tricked-out-cargotracker-run-01/actions/runs/36961856140) on implementation commit `00987d567bb2797524355f234535296ee2fae01b` and run [#36961938026](https://github.com/edburns/dd-3072539-tricked-out-cargotracker-run-01/actions/runs/36961938026) on evidence commit `fecff9d7d07f370291dc755265b8660ecfe56a8f` both completed `action_required` with zero jobs; no failed-job logs exist. The PR status is still `pending` with zero statuses. Do not treat this as a passing CI gate.
+  - Required parallel validation reported no Code Review findings and zero CodeQL Java alerts.
 - **Durable artifacts:**
   - Implementation commit `00987d567bb2797524355f234535296ee2fae01b`; local Maven logs above; generated Surefire report `demo/target/surefire-reports/org.eclipse.cargotracker.application.BookingServiceTest.txt`.
-  - GitHub PR #7 status for commit `00987d567bb2797524355f234535296ee2fae01b` was pending with no reported status checks at evidence-update time.
+  - GitHub Main Build runs [#36961856140](https://github.com/edburns/dd-3072539-tricked-out-cargotracker-run-01/actions/runs/36961856140) and [#36961938026](https://github.com/edburns/dd-3072539-tricked-out-cargotracker-run-01/actions/runs/36961938026) have no jobs or failed-job logs; PR #7's latest combined status was pending with zero reported status checks.
 - **Evidence assessment:** Strong local evidence for Java compilation, aggregate mutation, persistence, and all requested delivery assertions; hosted extensible integration-test CI remains unverified.
 - **Candidate reusable lessons:** The named-method extensible integration-test gate accepts the fifth ordered `BookingServiceTest` when the new behavior is exercised through the aggregate.
 
